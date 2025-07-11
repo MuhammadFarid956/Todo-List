@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini-Project-RevoU</title>
+
+    <!-- My Style -->
+    <link rel="stylesheet" href="CSS/style.css" />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;0,800;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- !Header Start-->
+      <h1>Todo List</h1>
+      <!-- !Header End-->
+
+      <!-- !Form Start -->
+      <div class="form-bar">
+        <div class="form">
+          <input
+            type="text"
+            placeholder="Add a new task..."
+            id="taskInput"
+            class="newTask"
+          />
+        </div>
+
+        <input type="date" class="dateInput" id="dateInput" />
+        <button onclick="addTask()" class="add-btn">+</button>
+      </div>
+      <!-- !Form End -->
+
+      <!-- Filter and Delete -->
+      <div class="filter-bar">
+        <div class="filter">
+          <button onclick="toggleFilter()" class="dropbtn">FILTER</button>
+          <div id="dropdownContent" class="dropdown-content">
+            <a href="#" onclick="filterTask('all')">All</a>
+            <a href="#" onclick="filterTask('pending')">Pending</a>
+            <a href="#" onclick="filterTask('completed')">Completed</a>
+          </div>
+        </div>
+        <button onclick="deleteAll" class="delete-btn">Delete All</button>
+      </div>
+      <!-- Task List -->
+      <h2>Task List</h2>
+      <ul id="taskList"></ul>
+    </div>
+
+    <!-- !My Javascript -->
+    <script src="JS/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+* {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  /* font-size: 20px; */
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center; /* vertical center */
+  margin: 0;
+}
+.container {
+  text-align: center;
+  align-items: center;
+  background-color: #f8f9;
+  border-radius: 10px;
+  margin: 10px 10px;
+  padding-bottom: 20px;
+}
+
+button {
+  flex: 1;
+  padding: 8px;
+  background-color: #28a475;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+
+/* !Form  Section Start*/
+
+/* Form Bar */
+.form-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 10px;
+  gap: 10px;
+}
+
+/* Task New */
+.newTask {
+  padding: 10px 10px;
+  font-size: 15px;
+}
+
+/* Date */
+.dateInput {
+  padding: 10px 10px;
+}
+
+/* Date Button */
+.add-btn {
+  font-size: 15px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+/* !Form End */
+
+/* Filter and Delete section */
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 6px;
+  cursor: pointer;
+  max-width: 120px;
+  margin-right: 10px;
+}
+
+.filter {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.dropbtn {
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  color: white;
+}
+
+/* !Task List Start */
+ul {
+  list-style: none;
+  padding: 0;
+  background-color: black;
+}
+
+/* !Task List End */
