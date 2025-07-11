@@ -30,6 +30,7 @@
             placeholder="Add a new task..."
             id="taskInput"
             class="newTask"
+            onkeydown="if (event.key === 'Enter') {addTask();}"
           />
         </div>
 
@@ -38,7 +39,7 @@
       </div>
       <!-- !Form End -->
 
-      <!-- Filter and Delete -->
+      <!-- !Filter and Delete Start-->
       <div class="filter-bar">
         <div class="filter">
           <button onclick="toggleFilter()" class="dropbtn">FILTER</button>
@@ -50,9 +51,21 @@
         </div>
         <button onclick="deleteAll" class="delete-btn">Delete All</button>
       </div>
-      <!-- Task List -->
+      <!-- !Filter and Delete End -->
+
+      <!--! Task List -->
       <h2>Task List</h2>
-      <ul id="taskList"></ul>
+      <div>
+        <table>
+          <thead>
+            <th>Task</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>actions</th>
+          </thead>
+          <tbody id="taskTableBody"></tbody>
+        </table>
+      </div>
     </div>
 
     <!-- !My Javascript -->

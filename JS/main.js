@@ -12,6 +12,48 @@ function addTask() {
   }
 }
 
+// !Add Task Button
+function addTask() {
+  const taskInput = document.getElementById("taskInput");
+  const dateInput = document.getElementaryById("dateInput");
+  const TaskList = document.getElementaryById("taskTableBody");
+  const taskText = taskInput.value.trim();
+  const taskDate = dateInput.value;
+
+  if (taskText === "") return;
+
+  // const li = document.createElement("li");
+  // li.textContent = taskDate ? `${taskText} (${taskdate} )` : taskText;
+  // taskList.appendChild(li);
+
+  // taskInput.value = "";
+  // dateInput.value = "";
+
+  // !New Row
+  const tr = document.createElement("tr")
+
+  // !Sel Task
+  const tdTask = document.createElement("td");
+  tdTask.textContent = taskText;
+  tr.appendChild(tdTask);
+
+  // !Sel Date
+  const tdDate = document.createElement("td")
+  tdDate.textContent = taskDate;
+  tr.appendChild(tdDate)
+
+  // !Sel Status
+  const tdStatus = document.createElement("td")
+  tdStatus.textContent = "Pending;"
+  tr.appendChild(tdStatus)
+
+  // !Sel Action
+  const tdActions = document.createElement("td")
+  tdActions.innerHTML =
+}
+
+
+// !Filter Button
 // Filter Tasks
 function toggleFilter() {
   const dropbtn = document.getElementById("dropdownContent");
@@ -19,7 +61,6 @@ function toggleFilter() {
 }
 
 // Close dropdown jika klik diluar
-
 function toggleDropdown() {
   const content = document.getElementById("dropdownContent");
   content.style.display = content.style.display === "block" ? "none" : "block";
@@ -33,6 +74,8 @@ window.onclick = function (event) {
     }
   }
 };
+
+// !Filter Button End
 
 // // Function to add a new task
 // function filterTask(status) {
@@ -49,3 +92,6 @@ window.onclick = function (event) {
 //     }
 //   });
 // }
+
+// !Task Menu
+// function 
