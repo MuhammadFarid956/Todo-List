@@ -30,7 +30,7 @@ function addTask() {
   // dateInput.value = "";
 
   // !New Row
-  const tr = document.createElement("tr")
+  const tr = document.createElement("tr");
 
   // !Sel Task
   const tdTask = document.createElement("td");
@@ -38,20 +38,19 @@ function addTask() {
   tr.appendChild(tdTask);
 
   // !Sel Date
-  const tdDate = document.createElement("td")
+  const tdDate = document.createElement("td");
   tdDate.textContent = taskDate;
-  tr.appendChild(tdDate)
+  tr.appendChild(tdDate);
 
   // !Sel Status
-  const tdStatus = document.createElement("td")
-  tdStatus.textContent = "Pending;"
-  tr.appendChild(tdStatus)
+  const tdStatus = document.createElement("td");
+  tdStatus.textContent = "Pending;";
+  tr.appendChild(tdStatus);
 
   // !Sel Action
-  const tdActions = document.createElement("td")
-  tdActions.innerHTML =
+  // const tdActions = document.createElement("td")
+  // tdActions.innerHTML =
 }
-
 
 // !Filter Button
 // Filter Tasks
@@ -94,4 +93,4 @@ window.onclick = function (event) {
 // }
 
 // !Task Menu
-// function 
+// function
