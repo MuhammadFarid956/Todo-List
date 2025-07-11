@@ -15,19 +15,12 @@ function addTask() {
 // !Add Task Button
 function addTask() {
   const taskInput = document.getElementById("taskInput");
-  const dateInput = document.getElementaryById("dateInput");
-  const TaskList = document.getElementaryById("taskTableBody");
+  const dateInput = document.getElementById("dateInput");
+  const tableBody = document.getElementById("taskTableBody");
   const taskText = taskInput.value.trim();
   const taskDate = dateInput.value;
 
   if (taskText === "") return;
-
-  // const li = document.createElement("li");
-  // li.textContent = taskDate ? `${taskText} (${taskdate} )` : taskText;
-  // taskList.appendChild(li);
-
-  // taskInput.value = "";
-  // dateInput.value = "";
 
   // !New Row
   const tr = document.createElement("tr");
@@ -44,12 +37,36 @@ function addTask() {
 
   // !Sel Status
   const tdStatus = document.createElement("td");
-  tdStatus.textContent = "Pending;";
+  tdStatus.textContent = "Pending";
   tr.appendChild(tdStatus);
 
   // !Sel Action
-  // const tdActions = document.createElement("td")
-  // tdActions.innerHTML =
+  const tdActions = document.createElement("td");
+  tdActions.innerHTML =
+    '<button onClick="this.parentElement.parentElement.remove()">Delete</button> <button onClick="toggleComplete(this)">Complete</button>';
+  tdActions.innerHTML = `<button onClick="deleteTask(this)">Delete</button>
+  <button onClick="completeTask(this)">Complete</button>`;
+  tr.appendChild(tdActions)
+
+  tableBody.appendChild(tr);
+
+  // !Riset Input
+  taskInput.value = "";
+  dateInput.value = "";
+}
+
+// !Delete Task
+// function untuk menghapus tr pada tabel
+function deleteTask(button) {
+  button.parentElement.parentElement.remove();
+}
+
+// !Complete Task
+function completeTask(button) {
+  // Mengubah status menjadi completed 
+  const row = button.parentElement.parentElement;
+  row.children[2].textContent = "Completed";
+  row.classList.add("completed")
 }
 
 // !Filter Button
@@ -74,23 +91,28 @@ window.onclick = function (event) {
   }
 };
 
+// !Filter Tasks
+function filterTasks(status) {
+  const rows =document.querySelectorAll("#taskTableBody tr");
+  rows.forEach(row => {
+    const taskStatus = row.children[2].textContent;
+    if (
+      status === "all" || 
+      (status === "pending" && taskStatus === "Pending") || 
+      (status === "completed" && taskStatus === "Completed")
+    ) {
+      row.style.display = "";
+    } else {
+      row.style.display = "none";
+    }
+  })
+}
 // !Filter Button End
 
-// // Function to add a new task
-// function filterTask(status) {
-//   const tasks = document.querySelectorAll(".task");
-//   tasks.forEach((task) => {
-//     if (status === "all") {
-//       task.style.display = "block";
-//     } else if (status === "pending" && !task.classList.contains("completed")) {
-//       task.style.display = "block";
-//     } else if (status === "completed" && task.classList.contains("completed")) {
-//       task.style.display = "block";
-//     } else {
-//       task.style.display = "none";
-//     }
-//   });
-// }
-
+// !Delete All Tasks
+function deleteAll() {
+  const tableBody = document.getElementById("taskTableBody");
+  tableBody.innerHTML = "";
+}
 // !Task Menu
 // function

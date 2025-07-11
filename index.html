@@ -44,12 +44,12 @@
         <div class="filter">
           <button onclick="toggleDropdown()" class="dropbtn">FILTER</button>
           <div id="dropdownContent" class="dropdown-content">
-            <a href="#" onclick="filterTask('all')">All</a>
-            <a href="#" onclick="filterTask('pending')">Pending</a>
-            <a href="#" onclick="filterTask('completed')">Completed</a>
+            <a href="#" onclick="filterTasks('all')">All</a>
+            <a href="#" onclick="filterTasks('pending')">Pending</a>
+            <a href="#" onclick="filterTasks('completed')">Completed</a>
           </div>
         </div>
-        <button onclick="deleteAll" class="delete-btn">Delete All</button>
+        <button onclick="deleteAll()" class="delete-btn">Delete All</button>
       </div>
       <!-- !Filter and Delete End -->
 
@@ -61,7 +61,7 @@
             <th>Task</th>
             <th>Date</th>
             <th>Status</th>
-            <th>actions</th>
+            <th>Actions</th>
           </thead>
           <tbody id="taskTableBody"></tbody>
         </table>

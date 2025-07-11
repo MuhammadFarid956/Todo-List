@@ -6,17 +6,19 @@
 body {
   min-height: 100vh;
   display: flex;
-  justify-content: center; /* horizontal center */
-  align-items: center; /* vertical center */
+  justify-content: center; 
+  align-items: center;
   margin: 0;
 }
 .container {
   text-align: center;
   align-items: center;
-  background-color: #f8f9;
+  background-color: #f0f2f5;
   border-radius: 10px;
   margin: 10px 10px;
   padding-bottom: 20px;
+  width: 800px;
+  max-width: 95vw;
 }
 
 button {
@@ -43,6 +45,9 @@ button {
 .newTask {
   padding: 10px 10px;
   font-size: 15px;
+  width: 550px;
+  max-width: 100%;
+
 }
 
 /* Date */
@@ -53,8 +58,9 @@ button {
 /* Date Button */
 .add-btn {
   font-size: 15px;
-  padding: 10px 15px;
+  padding: 10px 10px;
   cursor: pointer;
+  /* margin-left: 8px; */
 }
 
 /* !Form End */
@@ -111,10 +117,63 @@ button {
 }
 /* !Filter and delete End */
 
-/* !Task List Start */
-ul {
-  list-style: none;
-  padding: 0;
-  background-color: black;
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
 }
+
+th, td {
+  padding: 16px 12px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+th {
+  background-color: #28a475;
+  color: #fff;
+  font-weight: 600;
+}
+
+td:first-child, th:first-child {
+  width: 200px;
+  max-width: 200px;
+  min-width: 200px;
+  word-break: break-word;
+  text-align: left;
+  
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #e6f7ee;
+}
+
+td button {
+  margin: 0 4px;
+  padding: 6px 12px;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+td button:first-child {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+td button:last-child {
+  background-color: #28a475;
+  color: #fff;
+}
+
 /* !Task List End */
