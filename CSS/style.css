@@ -1,6 +1,7 @@
 * {
   font-family: "Poppins", sans-serif;
   font-style: normal;
+  font-size: 100%;
 }
 
 body {
@@ -39,14 +40,20 @@ button {
   align-items: center;
   margin: 16px 10px;
   gap: 10px;
+  position: relative;
+}
+
+.form-date {
+  display: flex;
 }
 
 /* Task New */
 .newTask {
   padding: 10px 10px;
   font-size: 15px;
-  width: 550px;
+  /* width: 550px; */
   max-width: 100%;
+  margin-right: 10px;
 
 }
 
@@ -177,3 +184,22 @@ td button:last-child {
 }
 
 /* !Task List End */
+
+
+/* !Media Queris */
+
+/* Desktop */
+@media (min-width: 900px) {
+  html {
+    font-size: 100%
+  }
+  };
+
+
+/* Tab */
+@media (max-width: 900px) {
+  html {
+    font-size: 5%;
+  }  
+}
+
