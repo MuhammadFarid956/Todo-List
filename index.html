@@ -24,17 +24,17 @@
 
       <!-- !Form Start -->
       <div class="form-bar">
-          <div class="form">
-            <input
-              type="text"
-              placeholder="Add a new task..."
-              id="taskInput"
-              class="newTask"
-              onkeydown="if (event.key === 'Enter') {addTask();}"
-            />
-          </div>
-          <input type="date" class="dateInput" id="dateInput" />
-        
+        <div class="form">
+          <input
+            type="text"
+            placeholder="Add a new task..."
+            id="taskInput"
+            class="newTask"
+            onkeydown="if (event.key === 'Enter') {addTask();}"
+          />
+        </div>
+        <input type="date" class="dateInput" id="dateInput" />
+
         <button onclick="addTask()" class="add-btn">+</button>
       </div>
       <!-- !Form End -->
