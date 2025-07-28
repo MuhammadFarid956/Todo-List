@@ -16,12 +16,14 @@ body {
 }
 
 .container {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 24px 32px;
   background-color: #ffffff;
   text-align: center;
   align-items: center;
   border-radius: 10px;
-  margin: 0px 10px;
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
 }
 
 button {
@@ -42,15 +44,14 @@ button {
   align-items: center;
   margin: 16px 10px;
   gap: 10px;
-  /* position: relative; */
 }
 
 /* Task New */
 .newTask {
   display: flex;
   padding: 10px 10px;
-  /* width: 550px ; */
-  /* max-width: 100%; */
+  width: 70vw;
+  min-width: 200px ;
 }
 
 /* Date */
@@ -122,15 +123,13 @@ button {
 
 /* Table */
 table {
-  width: 98%;
+  width: 100%;
   border-collapse: collapse;
-  /* margin-top: 16px; */
   background-color: #fff;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
-  margin: 10px auto;
-  /* margin-right: 10px */
+  margin: 16px auto;
 }
 
 th,
@@ -192,15 +191,66 @@ html {
 }
 
 /* Tab */
-@media (max-width: 767px) {
-  html {
-    size-adjust: 50%;
+@media (max-width: 900px) {
+  .container {
+    max-width: 98vw;
+    padding: 16px 8px;
+  }
+  .table {
+    font-size: 0.98rem;
+  }
+  th, td {
+    padding: 10px 6px;
+  }
+  .newTask {
+    width: 70vw;
+    min-width:120px;
   }
 }
 
 /* Mobile */
-@media (max-width: 480px) {
-  html {
-    size-adjust: 30%;
+@media (max-width: 600px) {
+  .container {
+    max-width: 100vw;
+    padding: 8px 2px;
+    border-radius: 0; 
+  }
+  table, thead, tbody, th, td, tr {
+    display: block;
+    width: 100%;
+  }
+  thead {
+    display: none;
+  }
+  tr {
+    margin-bottom: 16px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+    border-radius: 8px;
+    background: #fff;
+    padding: 8px 0;
+  }
+  td {
+    text-align: left;
+    padding: 8px 12px;
+    position: relative;
+    font-size: 1rem;
+    border: none;
+  }
+  td:before {
+    content: attr(data-lable);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 4px;
+    color: #28a475;
+  }
+  .form-bar { 
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .newTask, .dateInput {
+    width: 100%;
+    margin: 0; 
+    border-radius: 5px;
   }
 }
