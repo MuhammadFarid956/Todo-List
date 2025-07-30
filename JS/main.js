@@ -4,6 +4,7 @@ function addTask() {
 
   const taskText = taskInput.value.trim();
   const dateTxt = dateInput.value.trim();
+  saveTask();
 
   // Validasi
   if (taskText === "" || !/^\d{2}\/\d{2}\/\d{4}$/.test(datetext)) {
@@ -59,6 +60,7 @@ function addTask() {
 // function untuk menghapus tr pada tabel
 function deleteTask(button) {
   button.parentElement.parentElement.remove();
+  saveTask();
 }
 
 // !Complete Task
@@ -66,7 +68,8 @@ function completeTask(button) {
   // Mengubah status menjadi completed 
   const row = button.parentElement.parentElement;
   row.children[2].textContent = "Completed";
-  row.classList.add("completed")
+  row.classList.add("completed");
+  saveTask();
 }
 
 // !Filter Button
@@ -114,5 +117,51 @@ function deleteAll() {
   const tableBody = document.getElementById("taskTableBody");
   tableBody.innerHTML = "";
 }
-// !Task Menu
-// function
+
+
+// Function save and loads task
+
+function seveTask() {
+  const rows = document.qurerySelectorAll("#taskTableBody tr");
+  const tasks = [];
+  rows.forEach(row => {
+    tasks.push({
+      task: row.children[0].textContent,
+      date: row.children[1].textContent,
+      status: row.children[2].textContent
+    });
+  });
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function loadTask() {
+  const tableBody = document.getElementaryById("tasktableBody");
+  tableBody.innerHTML = "";
+  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  tasks.forEach(item => {
+    const tr = document.createAttribute("tr");
+
+    const tdTAsk = document.createElement("td");
+    tdTask.textContent = item.task;
+    tr.appendChild(tdTask);
+
+    const tdDate = documet.createElement("td");
+    tdDate.textContent = item.date;
+    tr.appendChild(tdDate);
+
+    const tdStatus = document.createElement("td");
+    tdStatus.textContent = item.status;
+    tr.appendChild(tdStatus);
+
+    const tdActions = document.createElement("td");
+    tdActions.innerHTML = `
+      <button onClick= "deleteTask(this)">Delete</button>
+      <button onClick="completeTask(this)"></button>
+      `;
+      tr.appendChild(tdActions);
+
+      tableBody.appendChild(tr);
+  });
+}
+
+window.onload = loadTask;
