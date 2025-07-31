@@ -186,8 +186,8 @@ td button:last-child {
 /* !Media Queris */
 
 /* Desktop */
-html {
-}
+/* html {
+} */
 
 /* Tab */
 @media (max-width: 900px) {

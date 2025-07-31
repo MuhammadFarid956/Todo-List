@@ -3,8 +3,7 @@ function addTask() {
   const dateInput = document.getElementById("dateInput");
 
   const taskText = taskInput.value.trim();
-  const dateTxt = dateInput.value.trim();
-  saveTask();
+  const dateText = dateInput.value.trim();
 
   // Validasi
   if (taskText === "" || !/^\d{2}\/\d{2}\/\d{4}$/.test(datetext)) {
@@ -47,29 +46,30 @@ function addTask() {
     '<button onClick="this.parentElement.parentElement.remove()">Delete</button> <button onClick="toggleComplete(this)">Complete</button>';
   tdActions.innerHTML = `<button onClick="deleteTask(this)">Delete</button>
   <button onClick="completeTask(this)">Complete</button>`;
-  tr.appendChild(tdActions)
+  tr.appendChild(tdActions);
 
   tableBody.appendChild(tr);
 
   // !Riset Input
   taskInput.value = "";
   dateInput.value = "";
+  saveTasks();
 }
 
 // !Delete Task
 // function untuk menghapus tr pada tabel
 function deleteTask(button) {
   button.parentElement.parentElement.remove();
-  saveTask();
+  saveTasks();
 }
 
 // !Complete Task
 function completeTask(button) {
-  // Mengubah status menjadi completed 
+  // Mengubah status menjadi completed
   const row = button.parentElement.parentElement;
   row.children[2].textContent = "Completed";
   row.classList.add("completed");
-  saveTask();
+  saveTasks();
 }
 
 // !Filter Button
@@ -96,19 +96,19 @@ window.onclick = function (event) {
 
 // !Filter Tasks
 function filterTasks(status) {
-  const rows =document.querySelectorAll("#taskTableBody tr");
-  rows.forEach(row => {
+  const rows = document.querySelectorAll("#taskTableBody tr");
+  rows.forEach((row) => {
     const taskStatus = row.children[2].textContent;
     if (
-      status === "all" || 
-      (status === "pending" && taskStatus === "Pending") || 
+      status === "all" ||
+      (status === "pending" && taskStatus === "Pending") ||
       (status === "completed" && taskStatus === "Completed")
     ) {
       row.style.display = "";
     } else {
       row.style.display = "none";
     }
-  })
+  });
 }
 // !Filter Button End
 
@@ -118,34 +118,33 @@ function deleteAll() {
   tableBody.innerHTML = "";
 }
 
-
 // Function save and loads task
 
-function seveTask() {
-  const rows = document.qurerySelectorAll("#taskTableBody tr");
+function saveTasks() {
+  const rows = document.querySelectorAll("#taskTableBody tr");
   const tasks = [];
-  rows.forEach(row => {
+  rows.forEach((row) => {
     tasks.push({
       task: row.children[0].textContent,
       date: row.children[1].textContent,
-      status: row.children[2].textContent
+      status: row.children[2].textContent,
     });
   });
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-function loadTask() {
-  const tableBody = document.getElementaryById("tasktableBody");
+function loadTasks() {
+  const tableBody = document.getElementById("taskTableBody");
   tableBody.innerHTML = "";
   const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  tasks.forEach(item => {
-    const tr = document.createAttribute("tr");
+  tasks.forEach((item) => {
+    const tr = document.createElement("tr");
 
-    const tdTAsk = document.createElement("td");
+    const tdTask = document.createElement("td");
     tdTask.textContent = item.task;
     tr.appendChild(tdTask);
 
-    const tdDate = documet.createElement("td");
+    const tdDate = document.createElement("td");
     tdDate.textContent = item.date;
     tr.appendChild(tdDate);
 
@@ -156,12 +155,12 @@ function loadTask() {
     const tdActions = document.createElement("td");
     tdActions.innerHTML = `
       <button onClick= "deleteTask(this)">Delete</button>
-      <button onClick="completeTask(this)"></button>
+      <button onClick="completeTask(this)">Complete</button>
       `;
-      tr.appendChild(tdActions);
+    tr.appendChild(tdActions);
 
-      tableBody.appendChild(tr);
+    tableBody.appendChild(tr);
   });
 }
 
-window.onload = loadTask;
+window.onload = loadTasks;
