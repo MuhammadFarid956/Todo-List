@@ -260,3 +260,11 @@ td button:last-child {
     border-radius: 5px;
   }
 }
+
+
+/* todo Footer */
+.footer {
+  justify-content: center;
+  text-align: center;
+
+}
