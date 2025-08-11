@@ -10,8 +10,8 @@ body {
   font-family: "Poppins", sans-serif;
   font-style: normal;
   min-height: 100vh;
-  background-color: #f8f9fa;
-  margin-top: 0 !important;
+  background-color: #f0f2f5;
+  /* margin-top: 0 !important; */
   padding-top: 10px;
 }
 
@@ -19,7 +19,7 @@ body {
   max-width: 900px;
   margin: 24px auto;
   padding: 24px 32px;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255 , 0.95);
   text-align: center;
   align-items: center;
   border-radius: 10px;
@@ -34,6 +34,83 @@ button {
   color: white;
   border-radius: 5px;
 }
+
+/* !Navbar*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0 !important;
+  align-items: center;
+  background: #28a475;
+  padding: 12px 32px; 
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-wight: 700;
+  color: white;
+  font-style: italic;
+}
+
+.navbar-right {
+  position: relative;
+  display: inline-block;
+}
+
+.user-icon {
+  cursor: pointer;
+}
+
+.login-menu {
+  display: none;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background: black;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  z-index: 100;
+}
+
+.login-menu form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-menu input {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.login-menu button {
+  margin-top: 10px;
+  padding: 8px;
+  background: #4cafef;
+  color: white;
+  cursor: pointer;
+}
+
+.login-menu button:hover {
+  background: #3a9fd6;
+}
+
+.signup-text {
+  font-size: 12px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.navbar-right.show .login-menu {
+  display: block;
+}
+
+
+
+
+/* !Navbar*/
 
 /* !Form  Section Start*/
 

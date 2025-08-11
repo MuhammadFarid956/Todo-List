@@ -12,6 +12,21 @@ function addTask() {
   }
 }
 
+// !Navbar
+feather.replace();
+
+const dropdown = document.querySelector(".navbar-right");
+const userIcon = document.querySelector(".user-icon");
+// Toggle dropdown menu
+if (userIcon) {
+  userIcon.addEventListener("click", function (e) {
+    e.stopPropagation();
+    dropdown.classList.toggle("show");
+  });
+}
+
+// !Navbar
+
 // !Add Task Button
 function addTask() {
   const taskInput = document.getElementById("taskInput");
@@ -163,7 +178,5 @@ function loadTasks() {
     tableBody.appendChild(tr);
   });
 }
-
-
 
 window.onload = loadTasks;

@@ -15,8 +15,33 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;0,800;1,700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Fetaher Icon -->
+     <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
+    <!-- !Navbar start -->
+     <nav class="navbar">
+      <div class="navbar-left">
+          <a>TooList <span>App</span></a>
+      </div>
+      <div class="navbar-right">
+        <a href="#" id="user-logo" ><i data-feather="user" class="user-icon"></i></a>
+      </div>
+
+      <div class="login-menu">
+        <form>
+          <input type="email" placeholder="Enter your email" required>
+          <input type="password" placeholder="Enter your passord" required>
+
+          <button type="submit">Sign In</button>
+          <p class="signup-text">Belum punya akun?
+            <a href="#">Sign Up</a>
+          </p>
+        </form>
+      </div>
+     </nav>
+    <!-- !Navbar End -->
     <!-- todo Content Start -->
     <div class="container">
       <!-- !Header Start-->
@@ -84,6 +109,11 @@
       </div>
     </footer>
     <!-- todo Footer End -->
+
+    <!-- !Feather Icon -->
+     <script>
+      feather.replace();
+    </script>
 
     <!-- !My Javascript -->
     <script src="JS/main.js"></script>
