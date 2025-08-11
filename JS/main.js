@@ -15,15 +15,20 @@ function addTask() {
 // !Navbar
 feather.replace();
 
-const dropdown = document.querySelector(".navbar-right");
+const dropdown = document.querySelector(".user-dropdown");
 const userIcon = document.querySelector(".user-icon");
 // Toggle dropdown menu
-if (userIcon) {
   userIcon.addEventListener("click", function (e) {
     e.stopPropagation();
     dropdown.classList.toggle("show");
   });
-}
+
+// Close dropdown when clicking outside
+//  document.addEventListener("click", function(e) {
+//   if (!dropdown.contains(e.traget)) {
+//     dropdown.classList.remove("show");
+//   }
+//  })
 
 // !Navbar
 

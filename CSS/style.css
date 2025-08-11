@@ -43,18 +43,21 @@ button {
   align-items: center;
   background: #28a475;
   padding: 12px 32px; 
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.navbar-left {
+.navbar-left a {
   display: flex;
   align-items: center;
   font-size: 2rem;
-  font-wight: 700;
-  color: white;
+  /* font-wight: 700; */
+  color: rgb(197, 33, 162);
   font-style: italic;
 }
 
-.navbar-right {
+.user-dropdown {
   position: relative;
   display: inline-block;
 }
@@ -103,7 +106,7 @@ button {
   text-align: center;
 }
 
-.navbar-right.show .login-menu {
+.user-dropdown.show .login-menu {
   display: block;
 }
 
