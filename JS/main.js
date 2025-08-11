@@ -116,6 +116,7 @@ function filterTasks(status) {
 function deleteAll() {
   const tableBody = document.getElementById("taskTableBody");
   tableBody.innerHTML = "";
+  localStorage.removeItem("tasks");
 }
 
 // Function save and loads task
@@ -162,5 +163,7 @@ function loadTasks() {
     tableBody.appendChild(tr);
   });
 }
+
+
 
 window.onload = loadTasks;
